@@ -8,11 +8,11 @@ class Button
 	public:
 		enum TriggerMode
 		{
-			B2_LOW,
-			B2_HIGH,
-			B2_RISING,
-			B2_FALLING,
-			B2_CHANGE
+			LOW,
+			HIGH,
+			RISING,
+			FALLING,
+			CHANGE
 		};
 		Button();
 		Button(TriggerMode _triggerMode, void (*_trigger)());
