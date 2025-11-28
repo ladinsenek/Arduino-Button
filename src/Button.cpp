@@ -64,13 +64,13 @@ void Button::update() {
 
 void Button::update(bool _input) {
 	switch (triggerMode) {
-		case TriggerMode::B2_LOW:
+		case TriggerMode::LOW:
 			if(!_input) trigger();
 			break;
-		case TriggerMode::B2_HIGH:
+		case TriggerMode::HIGH:
 			if(_input) trigger();
 			break;
-		case TriggerMode::B2_RISING:
+		case TriggerMode::RISING:
 			if (longPulse) {
 				if(_input) {
 					prevPressed = true;
@@ -105,7 +105,7 @@ void Button::update(bool _input) {
 				}
 			}
 			break;
-		case TriggerMode::B2_FALLING:
+		case TriggerMode::FALLING:
 			if (longPulse) {
 				if(!_input) {
 					prevPressed = true;
@@ -140,7 +140,7 @@ void Button::update(bool _input) {
 				}
 			}
 			break;
-		case TriggerMode::B2_CHANGE:
+		case TriggerMode::CHANGE:
 			if(_input != lastState) {
 				if (millis() - pressedTime >= debounce && !block) {
 					block = true;
